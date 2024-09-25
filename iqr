@@ -1,0 +1,10 @@
+# Speed data for regular driving style
+speed <- c(78.3, 81.8, 82, 74.2, 83.4, 84.5, 82.9, 77.5, 80.9, 70.6)
+
+# Calculate the interquartile range (IQR)
+iqr_speed <- IQR(speed)
+cat("Interquartile Range (IQR) of speed:", iqr_speed, "\n")
+
+# Calculate the standard deviation
+sd_speed <- sd(speed)
+cat("Standard Deviation of speed:", sd_speed, "\n")
