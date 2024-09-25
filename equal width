@@ -1,0 +1,17 @@
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+
+equal_freq_bins <- split(sort(marks), ceiling(seq_along(marks) / (length(marks) / 3)))
+
+min_value <- min(marks)
+max_value <- max(marks)
+bin_width <- (max_value - min_value) / 3
+equal_width_bins <- cut(marks, breaks = seq(min_value, max_value, by = bin_width), include.lowest = TRUE)
+
+hist(marks, breaks = 10, main = "Histogram of Marks", xlab = "Marks", col = "lightblue", border = "black")
+
+hist(unlist(equal_freq_bins), breaks = 3, main = "Equal-frequency Partitioning", xlab = "Marks", col = "lightgreen", border = "black")
+
+hist(marks, breaks = seq(min_value, max_value, by = bin_width), main = "Equal-width Partitioning", xlab = "Marks", col = "lightcoral", border = "black")
+
+equal_freq_bins
+equal_width_bins
